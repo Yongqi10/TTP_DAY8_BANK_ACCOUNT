@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Fragment } from 'react';
-
+import ButtonAdd from './ButtonAdd'
 
 
 function DataInCredit() {
@@ -31,6 +31,8 @@ function DataInCredit() {
 
     return (
         <Fragment>
+            <ButtonAdd Data = {Credit} setData = {setCredit}/>
+
         {
             
             (loading === false)?

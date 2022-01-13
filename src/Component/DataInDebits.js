@@ -1,4 +1,6 @@
 import React, { useState, useEffect, Fragment } from "react";
+import ButtonAdd from './ButtonAdd'
+
 
 function DataInDebits() {
   const [Debit, setDebit] = useState(() => {
@@ -23,6 +25,7 @@ function DataInDebits() {
 
   return (
     <Fragment>
+      <ButtonAdd Data = {Debit} setData = {setDebit}/>
       {loading === false ? (
         Debit.map((items, index) => {
           return (
