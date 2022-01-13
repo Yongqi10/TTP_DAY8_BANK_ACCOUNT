@@ -1,5 +1,6 @@
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React,{useState}from 'react';
 import Nav from './Component/Nav';
 import Home from './pages/Home';
 import Credits from './pages/Credits';
@@ -7,6 +8,11 @@ import Debits from './pages/Debits';
 import Content from './pages/Content';
 
 function App() {
+
+
+
+
+
   return (
     <div className="App">
     <BrowserRouter>

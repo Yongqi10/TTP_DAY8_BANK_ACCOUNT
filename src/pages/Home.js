@@ -1,8 +1,12 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import './Home.css';
 function Home() {
+
+
+
   return (
+    
     <div className="width">
       <span>Username:</span>
       <input className="form-control mt-2" type="text"></input>
