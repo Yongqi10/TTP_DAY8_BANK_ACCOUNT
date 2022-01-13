@@ -12,7 +12,7 @@ function Home() {
       <input className="form-control mt-2" type="text"></input>
       <span >Password:</span>
       <input className="form-control mt-2" type="password"></input>
-
+      
       <Link to = "/Content">
       <button className="btn btn-primary mt-2">Login</button>
       </Link>

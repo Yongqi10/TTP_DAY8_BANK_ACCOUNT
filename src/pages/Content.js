@@ -38,24 +38,42 @@ function Content() {
 
     }
 
+
+
+
+    // const calculate = (amount) =>{
+
+    //     useEffect(()=> {
+    //         setTotalForDebit((prv) => prv+amount)
+    //     },[totalForDebit])
+
+    // }
+
+
     useEffect(() => {
         GETDebitsAPI()
         GETCreditAPI()
       }, []);
 
-      console.log(totalForCredit)
+      console.log(totalForDebit)
       console.log(Debit)
     return (
 
         <Fragment>
+
             <h3 className="width">Content</h3>
+    
             <ul>
                 <li>
                     <div>Debits</div>
                     {
-                        Debit.reduce((previousValue, currentValue) => {
-                            previousValue.amount + currentValue.amount
-                        })
+                        // Debit.reduce((previousValue, currentValue) => {
+                        //     previousValue.amount + currentValue.amount
+                        // })
+
+                        // Debit.map((item) => {
+                        //    return calculate(item.amount)
+                        // })
                     }
                     <div>{totalForDebit}</div>
                 </li>
