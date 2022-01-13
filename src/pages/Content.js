@@ -1,6 +1,13 @@
 import React,{useState,useEffect,Fragment} from 'react';
 import './Debits.css'
-function Content() {
+function Content(props) {
+
+
+    const [accountBalance, username] = [props.accountBalance, props.username]
+
+
+    console.log(username,':::::', accountBalance)
+
     const [Credit,setCredit] = useState(()=>{return []})
     const [Debit, setDebit] = useState(() => {
         return [];
@@ -62,7 +69,7 @@ function Content() {
         <Fragment>
 
             <h3 className="width">Content</h3>
-    
+            <h2 className="width">Hello:&nbsp;{username}</h2>
             <ul>
                 <li>
                     <div>Debits</div>

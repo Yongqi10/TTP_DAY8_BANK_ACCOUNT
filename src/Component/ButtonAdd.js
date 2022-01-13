@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react/cjs/react.development";
+import './ButtonAdd.css'
+
 
 function ButtonAdd(props) {
 
@@ -23,7 +25,7 @@ function ButtonAdd(props) {
 
     const onClickSave = () => {
         let copy = [...Data];
-        let id = 1;
+        let id = (Math.random() * 100000).toString()
         copy.push({amount:Amount,description:Description,date:Date, id:id})
         console.log(copy)
         setData(copy)
@@ -35,7 +37,7 @@ function ButtonAdd(props) {
       {/* <!-- Button trigger modal --> */}
       <button
         type="button"
-        className="btn btn-primary"
+        className="btn btn-primary btnUse"
         data-toggle="modal"
         data-target="#exampleModal"
         data-whatever="@mdo"
@@ -73,7 +75,7 @@ function ButtonAdd(props) {
                   <label htmlFor="Amount" className="col-form-label">
                     Amount:
                   </label>
-                  <input type="text" className="form-control" id="Amount" onChange = {onChangeAmount}/>
+                  <input type="number" className="form-control" id="Amount" onChange = {onChangeAmount}/>
                 </div>
                 <div className="form-group">
                   <label htmlFor="message-text" className="col-form-label">
