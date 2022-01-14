@@ -1,11 +1,12 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import ButtonAdd from './ButtonAdd'
-
+import './DataInCredit.css'
 
 function DataInCredit() {
 
     const [Credit,setCredit] = useState(()=>{return []})
     const [loading, setLoading] = useState(true)
+    const [totalAmount, setTotalAmount] = useState(0);
 
     const GETAPI = async () =>{
 
@@ -29,10 +30,19 @@ function DataInCredit() {
     },[])
 
 
+    let totalForC =  Object.values(Credit).reduce((t,{amount})=>{
+        return t+amount
+     },0)
+
+     useEffect(()=>{
+        setTotalAmount((prv)=>prv = totalForC)
+    },[totalForC])
+
+
     return (
         <Fragment>
             <ButtonAdd Data = {Credit} setData = {setCredit}/>
-
+            <h4>Total:{totalAmount}</h4>
         {
             
             (loading === false)?
@@ -42,10 +52,14 @@ function DataInCredit() {
                     Amount:&nbsp;{items.amount}<br/>
                     Date:&nbsp;{items.date}
                 </li>)
+
+
+
             })
             :
             <p>loading</p>
         }
+
         </Fragment>
  
 

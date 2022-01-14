@@ -1,0 +1,12 @@
+li {
+    position: relative;
+    left: 0;
+    top: 0;
+}
+
+.Delete{
+    position: absolute;
+    top: 35px;
+    right: 20px;
+    cursor:pointer;
+}

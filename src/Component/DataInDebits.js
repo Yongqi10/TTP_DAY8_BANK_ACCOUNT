@@ -7,6 +7,7 @@ function DataInDebits() {
     return [];
   });
   const [loading, setLoading] = useState(true);
+  const [totalAmount, setTotalAmount] = useState(0);
 
   const GETAPI = async () => {
     try {
@@ -23,9 +24,18 @@ function DataInDebits() {
     GETAPI();
   }, []);
 
+  let totalForD = Object.values(Debit).reduce((t,{amount})=>{
+    return t+amount
+ },0)
+
+ useEffect(()=>{
+  setTotalAmount((prv)=>prv = totalForD)
+ },[totalForD])
+
   return (
     <Fragment>
       <ButtonAdd Data = {Debit} setData = {setDebit}/>
+      <h4>Total:{totalAmount}</h4>
       {loading === false ? (
         Debit.map((items, index) => {
           return (
