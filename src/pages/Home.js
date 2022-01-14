@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react/cjs/react.development";
 import './Home.css';
 function Home(props) {
-
+  
  const setUsername  = props.setUsername
 
   const onChange = (e) =>{
